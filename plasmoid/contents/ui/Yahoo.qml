@@ -154,6 +154,9 @@ Item {
         m_unitDistance       = results.units.distance
         m_unitPressure       = results.units.pressure
         m_windChill          = results.wind.chill
+        if (plasmoid.configuration.celsius)
+            m_windChill = Math.round((m_windChill - 32) / 1.8, 3)
+
         m_windDirection      = results.wind.direction
         m_windSpeed          = results.wind.speed
         if (plasmoid.configuration.ms) {
